@@ -19,7 +19,7 @@
 # How to Use ?
 
 This Section Describe How to Use this SDK 
-####SMS Notification
+#### SMS Notification
 
  Usage
  **Send SMS**
@@ -41,7 +41,7 @@ Response Success On JSON
 ``` php
 {"code":1,"status":"SUCCESS","message":"RECIPIENT PROCESSED","msgid":9270341239}
 ```
-####SMS OTP
+#### SMS OTP
 - Key (Your Unique Key )
 - MSDN (Phone Number)
 - OTPSTR (OTP String)
@@ -73,9 +73,9 @@ Response Success On JSON
 
 
 ----------
-#Disclaimer
+# Disclaimer
 This Project is Un-Official SDK From MainAPI.net.
-#Important
+# Important
 
 This Library Use PHP Curl Warpperby https://github.com/shuber/curl/ Thanks dude for the Amazing Wrapper.
 
