@@ -28,6 +28,12 @@ class OTP extends Curl {
         return $this->response;
     }
 
+    /**
+     * 
+     * @param type $type Set Type of Function send|verify
+     * @param type $otpstr Set OTP String
+     * 
+     */
     function otp($type = "send", $otpstr = "") {
         $ap = $this->accessToken;
         if ($ap != null) {
@@ -38,14 +44,14 @@ class OTP extends Curl {
                 $res = $this->put("https://api.mainapi.net/smsotp/1.0.1/otp/" . $this->key, array("phoneNum" => $this->msdn, "digit" => count($this->msdn)));
                 $this->response = json_decode($res->body);
             } else if ($type == "verify" && $otpstr != "") {
-                $url = "https://api.mainapi.net/smsotp/1.0.1/otp/".$this->key."/verifications";
+                $url = "https://api.mainapi.net/smsotp/1.0.1/otp/" . $this->key . "/verifications";
                 $res = $this->post($url, array("otpstr" => $otpstr, "digit" => count($otpstr)));
                 $this->response = json_decode($res->body);
             } else {
                 $this->response = (object) array("code" => 0, "msg" => "OTP Cannot Null");
             }
         } else {
-            $this->response = (object) array("code" => 0, "msg" => "Wrong Client ID or Secret ID ".$ap);
+            $this->response = (object) array("code" => 0, "msg" => "Wrong Client ID or Secret ID " . $ap);
         }
     }
 
