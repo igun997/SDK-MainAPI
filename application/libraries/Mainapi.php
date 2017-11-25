@@ -75,6 +75,18 @@ class Mainapi {
         }
         return $otp->response();
     }
+    function voiceotp($key,$msdn,$type="send",$otpstr="")
+    {
+        $this->getAccessToken();
+        $votp = new VOICEOT($this->ap,$key,$msdn);
+        if($type == "send")
+        {
+            $votp->otp("send");
+        }elseif ($type == "verify" && $otpstr != "") {
+            $votp->verify($otpstr);
+        }
+        return $votp->response();
+    }
 
 }
 

@@ -7,6 +7,7 @@
  */
 require __DIR__ . '/SMSNotification.php';
 require __DIR__ . '/OTP.php';
+require __DIR__ . '/votp.php';
 
 class SMSNotification extends SMSSender {
 
@@ -50,4 +51,21 @@ class SMSOTP extends OTP {
         $this->otp("verify", $otpstr);
     }
 
+}
+class VOICEOT extends votp{
+    function __construct($ap, $key, $msdn) {
+        parent::__construct($ap, $key, $msdn);
+    }
+    function response() {
+        return $this->getResponse();
+    }
+    
+    function send()
+    {
+        $this->otp("send");
+    }
+    function verify($otpstr="")
+    {
+        $this->otp("verify", $otpstr);
+    }
 }
