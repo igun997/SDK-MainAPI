@@ -51,8 +51,8 @@ Usage
 
 ``` php
 $mainAPI = new Mainapi();
-$mainAPI->setClient_id("1m7F1hfeuxTxLfHG9nAeSQDfQZga");
-$mainAPI->setSecret_id("PTQ2pKhOgIdfLxWTmjE1UL1BSvEa");
+$mainAPI->setClient_id("");
+$mainAPI->setSecret_id("");
 $res = $mainAPI->otp($key, $msdn);
 ```
 Response Success on JSON 
@@ -62,15 +62,29 @@ Response Success on JSON
 **Verify**
 ``` php
 $mainAPI = new Mainapi();
-$mainAPI->setClient_id("1m7F1hfeuxTxLfHG9nAeSQDfQZga");
-$mainAPI->setSecret_id("PTQ2pKhOgIdfLxWTmjE1UL1BSvEa");
+$mainAPI->setClient_id("");
+$mainAPI->setSecret_id("");
 $res = $mainAPI->otp($key, $msdn, $type, $otpstr);
 ```
 Response Success On JSON
 ``` php
 {"status":true,"message":"Your OTP is valid"}
 ```
-
+#### Voice OTP
+**Send OTP**
+``` php
+$voice = new Mainapi();
+$voice->setClient_id("xx");
+$voice->setSecret_id("xx");
+$res = $voice->voiceotp("key", "phoneNum","send");
+```
+**Verify**
+``` php
+$voice = new Mainapi();
+$voice->setClient_id("xx");
+$voice->setSecret_id("xx");
+$res = $voice->voiceotp("key", "phoneNum","verify","otpstr");
+```
 
 ----------
 # Disclaimer
