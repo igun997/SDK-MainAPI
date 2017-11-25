@@ -5,7 +5,7 @@
 # Features
 - SMS Notification (Completed)
 - SMS OTP (Completed)
-- Voice OTP (On-Process)
+- Voice OTP (Completed)
 - Finpay02111 (Comming Soon)
 - FinpayCC (Comming Soon) 
 - TMoney (Comming Soon)
